@@ -1,0 +1,25 @@
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "vgl"
+        url = "https://voxelgameslib.github.io/VoxelGamesLibv2/mvn-repo/"
+    }
+}
+
+dependencies {
+    compile project(":rush-api")
+    compile group: 'com.voxelgameslib', name: 'voxelgameslib', version: '2.0-SNAPSHOT'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
